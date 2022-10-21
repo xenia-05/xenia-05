@@ -2,6 +2,7 @@
 
 v = list(map(int, input().split()))
 print(max(v))
+''' Ввод: 6 14 2 13. Вывод:14'''
 
 #Вводится вектор. Заменить в нём каждое число Фибоначчи на следующее.
 
@@ -21,13 +22,14 @@ for i in range(len(v)):
         vnew.append(fib(v[i]))
     
 print(vnew)
-
-'''Напишите программу, которая помогает определить какие вещи могут поместиться в рюкзак.
+'''Ввод: 3 64 15 144. Вывод: 5 64 15 233'''
+'''
+Напишите программу, которая помогает определить какие вещи могут поместиться в рюкзак.
 Вводится существующий объем рюкзака.
 Затем вводятся объемы всех вещей, которые хочется туда поместить.
 Нужно вывести список объемов вещей, которые поместятся в рюкзак.
-Постарайтесь максимизировать кол-во вошедших вещей.'''
-
+Постарайтесь максимизировать кол-во вошедших вещей.
+'''
 vr = int(input())
 v = list(map(int, input().split()))
 v = sorted(v)
@@ -38,7 +40,8 @@ for i in range(len(v)):
         vr = vr - v[i]
 print(vz)
     
-
+'''Ввод: 15
+         2 14 5 7. Вывод: 2 5 7'''
 
 
 '''
@@ -47,23 +50,27 @@ print(vz)
 '''
 
 
+
+
 dict_adress = {}
 keyrea, keystudy = map(str, input().split())
 valuerea = list(map(str, input().split()))
 valuestudy = list(map(str, input().split()))
 dict_adress[keyrea] = valuerea
 dict_adress[keystudy] = valuestudy
-
 polzovateli = []
-for items in dict_adress['rea.ru']:
-    polzovateli.append(items + '@' + 'rea.ru')
-for items in dict_adress['study.com']:
-    polzovateli.append(items + '@' + 'study.com')
+for key in dict_adress:
+    for items in dict_adress[key]:
+        polzovateli.append(items + '@' + key)
 print(sorted(polzovateli))
 
-
-
-
+'''Ввод: rea.ru study.com
+         igor vlad
+         olga masha
+    Вывод: igor@rea.ru
+           masha@study.com
+           olga@study.com
+           vlad@rea.ru'''
 
 
 
